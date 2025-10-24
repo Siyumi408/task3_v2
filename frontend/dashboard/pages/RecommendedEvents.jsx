@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 const RecommendedEvents = () => {
@@ -40,12 +40,12 @@ const RecommendedEvents = () => {
   };
 
   return (
-    <div className="p-6 min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <div className="p-6 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Recommended Events</h2>
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">Recommended Events</h2>
         <button
           onClick={fetchRecommended}
-          className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors dark:bg-blue-500 dark:hover:bg-blue-400"
+          className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600 text-white hover:shadow-lg hover:shadow-purple-300/50 dark:hover:shadow-purple-500/50 transition-all"
         >
           Refresh
         </button>
@@ -53,7 +53,7 @@ const RecommendedEvents = () => {
 
       {loading && (
         <div className="flex justify-center items-center h-40">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-500"></div>
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-purple-500"></div>
         </div>
       )}
 
@@ -65,7 +65,7 @@ const RecommendedEvents = () => {
       )}
 
       {!loading && !error && items.length === 0 && (
-        <div className="text-center py-12 bg-white rounded-lg shadow dark:bg-gray-950 dark:border dark:border-gray-800 dark:shadow-[0_35px_60px_-40px_rgba(0,0,0,0.8)]">
+        <div className="text-center py-12 bg-white/80 backdrop-blur-sm rounded-lg shadow dark:bg-slate-800/80 dark:backdrop-blur-sm dark:border dark:border-slate-700 dark:shadow-[0_35px_60px_-40px_rgba(0,0,0,0.8)]">
           <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
@@ -77,14 +77,14 @@ const RecommendedEvents = () => {
       {!loading && !error && items.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(ev => (
-            <div key={ev.event_id} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow dark:bg-gray-950 dark:border-gray-800 dark:hover:shadow-[0_30px_70px_-40px_rgba(0,0,0,0.9)]">
+            <div key={ev.event_id} className="bg-white/80 backdrop-blur-sm border border-purple-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all hover:scale-105 dark:bg-slate-800/80 dark:backdrop-blur-sm dark:border-slate-700 dark:hover:shadow-[0_30px_70px_-40px_rgba(0,0,0,0.9)]">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{ev.event_title}</h3>
               {ev.description && (
                 <p className="text-gray-700 mb-3 line-clamp-3 dark:text-gray-300">{ev.description}</p>
               )}
               <div className="space-y-2 text-sm mb-3">
                 <div className="flex items-start text-gray-700 dark:text-gray-300">
-                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <span>
@@ -93,7 +93,7 @@ const RecommendedEvents = () => {
                 </div>
                 {ev.location && (
                   <div className="flex items-start text-gray-700 dark:text-gray-300">
-                    <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -104,7 +104,7 @@ const RecommendedEvents = () => {
               {Array.isArray(ev.categories) && ev.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-4">
                   {ev.categories.map(c => (
-                    <span key={`${ev.event_id}-${c.category_id}`} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full border border-blue-200 dark:bg-blue-500/20 dark:text-blue-200 dark:border-blue-500/40">
+                    <span key={`${ev.event_id}-${c.category_id}`} className="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-full border border-purple-200 dark:bg-purple-500/20 dark:text-purple-200 dark:border-purple-500/40">
                       {c.category_name}
                     </span>
                   ))}
@@ -112,7 +112,7 @@ const RecommendedEvents = () => {
               )}
               <Link
                 to={`/events/${ev.event_id}`}
-                className="mt-1 w-full inline-block text-center bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors dark:bg-blue-500 dark:hover:bg-blue-400"
+                className="mt-1 w-full inline-block text-center bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600 text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg hover:shadow-purple-300/50 dark:hover:shadow-purple-500/50 transition-all hover:scale-105"
               >
                 View Details
               </Link>
