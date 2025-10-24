@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Modal({ open, onClose, children }) {
   const ref = useRef(null);
@@ -24,16 +24,16 @@ export default function Modal({ open, onClose, children }) {
       role="dialog" 
       aria-modal="true"
     >
-      <div className="absolute inset-0 bg-white/25 dark:bg-black/70 backdrop-blur-sm transition-colors" />
+      <div className="absolute inset-0 bg-black/30 dark:bg-black/80 backdrop-blur-sm transition-colors duration-300" />
       <div 
         ref={ref} 
         tabIndex={-1} 
         onClick={(e)=>e.stopPropagation()}
-        className="relative w-[92%] max-w-3xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl dark:shadow-[0_25px_70px_-35px_rgba(0,0,0,0.9)] p-6 transition-colors duration-300"
+        className="relative w-[92%] max-w-3xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-2xl dark:shadow-[0_35px_70px_-40px_rgba(0,0,0,0.95)] p-6 transition-colors duration-300"
       >
         <button 
           onClick={onClose} 
-          className="absolute top-3 right-3 w-8 h-8 grid place-items-center rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900 transition-colors"
+          className="absolute top-3 right-3 w-8 h-8 grid place-items-center rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800 transition-colors duration-200"
         >
           ✕
         </button>
