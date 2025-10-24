@@ -7,11 +7,15 @@ body {
 
 .event-detail-container {
     min-height: 100vh;
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom right, #eff6ff, #fae8ff, #fce7f3);
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+html.dark .event-detail-container {
+    background: linear-gradient(to bottom right, #0f172a, #581c87, #0f172a);
 }
 
 .back-button {
@@ -37,10 +41,15 @@ body {
 .event-content {
     flex: 1;
     display: flex;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     min-height: calc(100vh - 60px);
     width: 100%;
     overflow: hidden;
+}
+
+html.dark .event-content {
+    background: rgba(30, 41, 59, 0.8);
 }
 
 .event-left-section {
@@ -85,15 +94,15 @@ body {
 }
 
 .event-status.ongoing {
-    background-color: #0D6EFD;
+    background: linear-gradient(to right, #22c55e, #10b981);
 }
 
 .event-status.upcoming {
-    background-color: #0AAF7E;
+    background: linear-gradient(to right, #eab308, #f59e0b);
 }
 
 .event-status.ended {
-    background-color: #D33B65;
+    background: linear-gradient(to right, #ef4444, #dc2626);
 }
 
 .event-description {
@@ -259,7 +268,7 @@ body {
 /* Rate event button */
 .rate-button {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(to right, #a855f7, #ec4899);
     color: white;
     border: none;
     padding: 16px;
@@ -273,11 +282,21 @@ body {
     justify-content: center;
     gap: 8px;
     margin-top: auto;
+    box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.39);
 }
 
 .rate-button:hover {
-    background-color: rgba(0, 0, 0, 1);
-    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+    transform: translateY(-2px) scale(1.02);
+}
+
+html.dark .rate-button {
+    background: linear-gradient(to right, #9333ea, #db2777);
+    box-shadow: 0 4px 14px 0 rgba(147, 51, 234, 0.5);
+}
+
+html.dark .rate-button:hover {
+    box-shadow: 0 6px 20px rgba(147, 51, 234, 0.6);
 }
 
 .rate-icon {
@@ -293,8 +312,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #eff6ff, #fae8ff, #fce7f3);
     padding: 20px;
+}
+
+html.dark .loading-container,
+html.dark .error-container,
+html.dark .not-found-container {
+    background: linear-gradient(to bottom right, #0f172a, #581c87, #0f172a);
 }
 
 .loading-text {
@@ -322,10 +347,16 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8px 10px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     position: relative;
     z-index: 100;
+}
+
+html.dark .mobile-nav-bar {
+    background: rgba(30, 41, 59, 0.8);
+    border-bottom-color: rgba(148, 163, 184, 0.2);
 }
 
 .mobile-back-button {
@@ -391,8 +422,8 @@ body {
 /* --- Interested button --- */
 .interested-button {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.08);
-    color: #000000;
+    background-color: rgba(168, 85, 247, 0.1);
+    color: #9333ea;
     padding: 16px;
     border-radius: 12px;
     font-size: 16px;
@@ -403,11 +434,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: none;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .interested-button:hover {
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: rgba(168, 85, 247, 0.2);
     transform: translateY(-1px);
 }
 
@@ -417,8 +448,26 @@ body {
 }
 
 .interested-button.active {
-    background-color: #000000;
+    background: linear-gradient(to right, #22c55e, #16a34a);
     color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.39);
+}
+
+html.dark .interested-button {
+    background-color: rgba(148, 163, 184, 0.1);
+    color: #cbd5e1;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+html.dark .interested-button:hover {
+    background-color: rgba(148, 163, 184, 0.2);
+}
+
+html.dark .interested-button.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.5);
 }
 
 .interested-icon {
