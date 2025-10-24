@@ -110,27 +110,27 @@ export default function FeedbackCard({ eventId }) {
   };
 
   return (
-      <div className="max-w-md mx-auto bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl border border-blue-100 overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
+      <div className="max-w-md mx-auto bg-gradient-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 rounded-2xl shadow-xl border border-blue-100 dark:border-slate-700 overflow-hidden transition-colors duration-300">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-purple-700 dark:to-pink-700 p-6 text-white">
           <h2 className="text-2xl font-bold tracking-tight">Your Feedback</h2>
-          <p className="text-blue-100 text-sm mt-1">
+          <p className="text-blue-100 dark:text-purple-200 text-sm mt-1">
             Help us improve your experience
           </p>
         </div>
 
         <div className="p-6 space-y-6">
           {summary && (
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <div className="bg-gray-50 dark:bg-slate-800/50 rounded-xl p-4 border border-gray-100 dark:border-slate-700 transition-colors duration-300">
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-3">
                     <div className="flex items-center space-x-1">
                       <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                      <span className="font-semibold text-gray-800">
+                      <span className="font-semibold text-gray-800 dark:text-gray-200">
                     {summary.average ?? "—"}
                   </span>
                     </div>
-                    <div className="text-gray-500">•</div>
-                    <span className="text-gray-600">{summary.count} ratings</span>
+                    <div className="text-gray-500 dark:text-gray-400">•</div>
+                    <span className="text-gray-600 dark:text-gray-300">{summary.count} ratings</span>
                   </div>
                 </div>
               </div>
@@ -145,8 +145,8 @@ export default function FeedbackCard({ eventId }) {
                   <div className="absolute -inset-4 bg-green-100 rounded-full opacity-20 animate-ping"></div>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-gray-800">Thank you!</h3>
-                  <p className="text-gray-600">Your feedback has been submitted</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">Thank you!</h3>
+                  <p className="text-gray-600 dark:text-gray-300">Your feedback has been submitted</p>
                 </div>
                 <div className="flex justify-center gap-3">
                   <button
@@ -166,7 +166,7 @@ export default function FeedbackCard({ eventId }) {
           ) : (
               <>
                 <div className="space-y-3">
-                  <label className="block text-sm font-semibold text-gray-700">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200">
                     Rate your experience
                   </label>
                   <div className="flex justify-center space-x-2">
@@ -187,14 +187,14 @@ export default function FeedbackCard({ eventId }) {
                     ))}
                   </div>
                   {mine && (
-                      <p className="text-xs text-gray-500 text-center bg-blue-50 rounded-lg py-2 px-3">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 text-center bg-blue-50 dark:bg-slate-800/50 rounded-lg py-2 px-3 transition-colors duration-300">
                         Previous rating: {mine.rating} ⭐
                       </p>
                   )}
                 </div>
 
                 <div className="space-y-3">
-                  <label className="block text-sm font-semibold text-gray-700">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200">
                     Share your thoughts
                   </label>
                   <div className="relative">
@@ -205,17 +205,17 @@ export default function FeedbackCard({ eventId }) {
                     }}
                     placeholder="Tell us what you think... Every detail helps us improve!"
                     rows={4}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-400 outline-none transition-all duration-200 resize-none bg-gray-50 focus:bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-600 rounded-xl focus:ring-4 focus:ring-blue-100 dark:focus:ring-purple-500/30 focus:border-blue-400 dark:focus:border-purple-500 outline-none transition-all duration-200 resize-none bg-gray-50 dark:bg-slate-800 focus:bg-white dark:focus:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                 />
-                    <div className="absolute bottom-3 right-3 text-xs text-gray-400">
+                    <div className="absolute bottom-3 right-3 text-xs text-gray-400 dark:text-gray-500">
                       {feedback.length}/500
                     </div>
                   </div>
                 </div>
 
                 {error && (
-                    <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                      <p className="text-red-600 text-sm font-medium">{error}</p>
+                    <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-xl p-4 transition-colors duration-300">
+                      <p className="text-red-600 dark:text-red-300 text-sm font-medium">{error}</p>
                     </div>
                 )}
 
@@ -240,7 +240,7 @@ export default function FeedbackCard({ eventId }) {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-10 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
                 </button>
 
-                <p className="text-xs text-gray-500 text-center italic">
+                <p className="text-xs text-gray-500 dark:text-gray-400 text-center italic">
                   Your feedback makes our events better ✨
                 </p>
               </>

@@ -33,6 +33,11 @@ html.dark .event-detail-container {
     width: 50px;
 }
 
+html.dark .back-button {
+    color: #e2e8f0;
+    background: transparent;
+}
+
 .back-icon {
     width: 12px;
     height: 12px;
@@ -82,6 +87,10 @@ html.dark .event-content {
     line-height: 1.2;
 }
 
+html.dark .event-title {
+    color: #f8fafc;
+}
+
 .event-status {
     display: inline-block;
     background-color: #000000;
@@ -110,6 +119,10 @@ html.dark .event-content {
     font-size: 14px;
     line-height: 1.6;
     margin: 0;
+}
+
+html.dark .event-description {
+    color: #cbd5e1;
 }
 
 /* Photo carousel styles */
@@ -265,6 +278,10 @@ html.dark .event-content {
     line-height: 1.4;
 }
 
+html.dark .detail-value {
+    color: #e2e8f0;
+}
+
 /* Rate event button */
 .rate-button {
     width: 100%;
@@ -328,6 +345,10 @@ html.dark .not-found-container {
     color: #000000aa;
 }
 
+html.dark .loading-text {
+    color: #cbd5e1;
+}
+
 .error-text {
     font-size: 18px;
     font-weight: 600;
@@ -339,6 +360,10 @@ html.dark .not-found-container {
     font-size: 18px;
     font-weight: 600;
     color: #000000aa;
+}
+
+html.dark .not-found-text {
+    color: #cbd5e1;
 }
 
 /* Mobile Navigation Bar - Initially hidden */
@@ -369,6 +394,10 @@ html.dark .mobile-nav-bar {
     text-decoration: none;
 }
 
+html.dark .mobile-back-button {
+    color: #e2e8f0;
+}
+
 .mobile-back-icon {
     width: 16px;
     height: 16px;
@@ -382,6 +411,10 @@ html.dark .mobile-nav-bar {
     font-weight: 600;
     color: #000000;
     margin: 0;
+}
+
+html.dark .mobile-nav-title {
+    color: #f8fafc;
 }
 
 .mobile-nav-spacer {
@@ -413,6 +446,10 @@ html.dark .mobile-nav-bar {
     padding: 0;
     margin-top: 8px;
     text-decoration: none;
+}
+
+html.dark .description-toggle {
+    color: #cbd5e1;
 }
 
 .description-toggle:hover {
